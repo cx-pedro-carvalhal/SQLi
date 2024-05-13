@@ -20,21 +20,14 @@ namespace SQLi_1
             }
             catch  
             {
-
                 Console.WriteLine("An error has occurred !!");
-            }
-            
+            }            
         }
 
         private static  string Encrypt(string plain)
         {
             return plain;
         }
-
-         private static  string Encrypt(string plain)
-         {
-             return plain;
-         }
 
          private static void Login(string username,string password)
          {
@@ -68,15 +61,12 @@ namespace SQLi_1
                          cmd.Connection = conn;
                          cmd.ExecuteScalar();
                      }
-
                  }
              }
              catch  
              {
-
                  Console.WriteLine("An error has occurred !!");
-             }
-           
+             }           
          }
     }
 }
