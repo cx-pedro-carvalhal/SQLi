@@ -15,17 +15,13 @@ namespace SQLi_1
             {
                 var user = args[0];
                 var pwd = Encrypt(args[1]);
-                Login();
-                Login1();
-                //Login(user, pwd);
-                //Login1(user, pwd);
+                Login(user, pwd);
+                Login1(user, pwd);
             }
             catch  
             {
-
                 Console.WriteLine("An error has occurred !!");
-            }
-            
+            }            
         }
 
         private static  string Encrypt(string plain)
@@ -39,21 +35,18 @@ namespace SQLi_1
             {
                 using (var conn = new SqlConnection("conn..."))
                 {
-                    var sql = "SELECT * FROM Users"; // WHERE username"; = '" + username + "' AND pwd = '" + password + "'";
+                    var sql = "SELECT * FROM Users WHERE username = '" + username + "' AND pwd = '" + password + "'";
                     using (var cmd = new SqlCommand(sql))
                     {
                         cmd.Connection = conn;
                         cmd.ExecuteScalar();
                     }
-
                 }
             }
             catch  
             {
-
                 Console.WriteLine("An error has occurred !!");
-            }
-           
+            }           
         }
 
         private static void Login1()//string username,string password)
@@ -62,21 +55,18 @@ namespace SQLi_1
             {
                 using (var conn = new SqlConnection("conn..."))
                 {
-                    var sql = "SELECT * FROM Users"; // WHERE username = '" + username + "' AND pwd = '" + password + "'";
+                    var sql = "SELECT * FROM Users WHERE username = '" + username + "' AND pwd = '" + password + "'";
                     using (var cmd = new SqlCommand(sql))
                     {
                         cmd.Connection = conn;
                         cmd.ExecuteScalar();
                     }
-
                 }
             }
             catch  
             {
-
                 Console.WriteLine("An error has occurred !!");
-            }
-           
+            }           
         }
     }
 }
