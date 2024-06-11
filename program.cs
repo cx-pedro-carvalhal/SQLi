@@ -15,8 +15,8 @@ namespace SQLi_1
             {
                 var user = args[0];
                 var pwd = Encrypt(args[1]);
-                Login();
-                Login1();
+                Login(user, pwd);
+                Login1(user, pwd);
             }
             catch  
             {
@@ -29,13 +29,13 @@ namespace SQLi_1
             return plain;
         }
 
-        private static void Login()
+        private static void Login()//string username,string password)
         {
             try
             {
                 using (var conn = new SqlConnection("conn..."))
                 {
-                    var sql = "SELECT * FROM Users";
+                    var sql = "SELECT * FROM Users WHERE username = '" + username + "' AND pwd = '" + password + "'";
                     using (var cmd = new SqlCommand(sql))
                     {
                         cmd.Connection = conn;
@@ -55,7 +55,7 @@ namespace SQLi_1
             {
                 using (var conn = new SqlConnection("conn..."))
                 {
-                    var sql = "SELECT * FROM Users";
+                    var sql = "SELECT * FROM Users WHERE username = '" + username + "' AND pwd = '" + password + "'";
                     using (var cmd = new SqlCommand(sql))
                     {
                         cmd.Connection = conn;
