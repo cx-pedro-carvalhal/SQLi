@@ -29,7 +29,7 @@ namespace SQLi_1
             return plain;
         }
 
-        private static void Login()//string username,string password)
+        private static void Login(string username,string password)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace SQLi_1
             }           
         }
 
-        private static void Login1()//string username,string password)
+        private static void Login1(string username,string password)
         {
             try
             {
