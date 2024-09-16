@@ -21,7 +21,6 @@ namespace SQLi_1
             catch  
             {
                 Console.WriteLine("An error has occurred !!");
-                Console.WriteLine("An error has occurred !!");
             }            
         }
 
