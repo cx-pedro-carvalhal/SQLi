@@ -23,6 +23,7 @@ namespace SQLi_1
             catch  
             {
                 Console.WriteLine("An error has occurred !!");
+                //teste
             }            
         }
 
